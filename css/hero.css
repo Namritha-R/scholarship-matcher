@@ -1,0 +1,66 @@
+/* ═══ Hero Page Styles ═══ */
+.hero-section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:var(--space-4xl) 0}
+.hero-bg{position:absolute;inset:0;background:var(--gradient-hero);z-index:0}
+.hero-bg::before{content:'';position:absolute;top:-50%;right:-30%;width:70vw;height:70vw;border-radius:50%;background:radial-gradient(circle,rgba(var(--primary-rgb),0.12) 0%,transparent 70%);animation:float 8s ease-in-out infinite}
+.hero-bg::after{content:'';position:absolute;bottom:-40%;left:-20%;width:60vw;height:60vw;border-radius:50%;background:radial-gradient(circle,rgba(var(--secondary-rgb),0.1) 0%,transparent 70%);animation:float 10s ease-in-out infinite 2s}
+.hero-content{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:0 var(--space-xl);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3xl);align-items:center}
+.hero-text{max-width:600px}
+.hero-badge{display:inline-flex;align-items:center;gap:var(--space-sm);padding:6px 16px;background:var(--primary-muted);border:1px solid rgba(var(--primary-rgb),0.2);border-radius:var(--radius-full);font-size:0.8rem;font-weight:600;color:var(--primary);margin-bottom:var(--space-lg);animation:fadeInUp .6s var(--ease-out) both}
+.hero-badge .pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--success);animation:pulse 2s infinite}
+.hero-title{margin-bottom:var(--space-lg);animation:fadeInUp .6s var(--ease-out) .1s both}
+.hero-subtitle{font-size:1.15rem;margin-bottom:var(--space-2xl);max-width:500px;animation:fadeInUp .6s var(--ease-out) .2s both}
+.hero-actions{display:flex;gap:var(--space-md);flex-wrap:wrap;animation:fadeInUp .6s var(--ease-out) .3s both}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg);margin-top:var(--space-3xl);animation:fadeInUp .6s var(--ease-out) .4s both}
+.stat-card{text-align:center;padding:var(--space-lg);background:var(--gradient-card);border:1px solid var(--surface-border);border-radius:var(--radius-lg);transition:transform var(--duration-fast)}
+.stat-card:hover{transform:translateY(-4px)}
+.stat-number{font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--text-primary)}
+.stat-number .gradient-text{font-size:inherit}
+.stat-label{font-size:0.85rem;color:var(--text-tertiary);margin-top:var(--space-xs)}
+.hero-visual{display:flex;justify-content:center;align-items:center;animation:fadeIn 1s var(--ease-out) .5s both}
+.hero-illustration{width:100%;max-width:500px;position:relative}
+.hero-floating-cards{position:relative;width:100%;height:400px}
+.floating-card{position:absolute;background:var(--glass-bg);backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:var(--radius-lg);padding:var(--space-lg);box-shadow:var(--shadow-lg);animation:float 6s ease-in-out infinite}
+.floating-card:nth-child(1){top:10%;left:5%;width:220px;animation-delay:0s}
+.floating-card:nth-child(2){top:40%;right:0;width:240px;animation-delay:1.5s}
+.floating-card:nth-child(3){bottom:5%;left:15%;width:200px;animation-delay:3s}
+.floating-card .fc-icon{width:40px;height:40px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:var(--space-sm)}
+.floating-card .fc-title{font-family:var(--font-display);font-weight:600;font-size:0.95rem;margin-bottom:4px}
+.floating-card .fc-desc{font-size:0.8rem;color:var(--text-tertiary)}
+.floating-card .fc-amount{font-family:var(--font-display);font-weight:700;font-size:1.3rem;color:var(--success);margin-top:var(--space-sm)}
+
+/* How It Works */
+.how-section{padding:var(--space-4xl) 0;position:relative}
+.section-header{text-align:center;margin-bottom:var(--space-3xl)}
+.section-header p{max-width:600px;margin:var(--space-md) auto 0}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-xl)}
+.how-card{text-align:center;padding:var(--space-2xl) var(--space-lg);background:var(--gradient-card);border:1px solid var(--surface-border);border-radius:var(--radius-xl);transition:all var(--duration-normal);position:relative}
+.how-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:rgba(var(--primary-rgb),0.3)}
+.how-step{position:absolute;top:-16px;left:50%;transform:translateX(-50%);width:32px;height:32px;border-radius:50%;background:var(--gradient-primary);color:white;font-weight:700;font-size:0.85rem;display:flex;align-items:center;justify-content:center;font-family:var(--font-display)}
+.how-icon{width:64px;height:64px;border-radius:var(--radius-lg);background:var(--primary-muted);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-lg);font-size:1.8rem}
+.how-card h3{margin-bottom:var(--space-sm)}
+.how-card p{font-size:0.9rem}
+
+/* Level Cards */
+.levels-section{padding:var(--space-4xl) 0}
+.levels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--space-md)}
+.level-card{display:flex;flex-direction:column;align-items:center;padding:var(--space-xl) var(--space-md);background:var(--surface);border:1px solid var(--surface-border);border-radius:var(--radius-lg);cursor:pointer;transition:all var(--duration-fast);text-align:center}
+.level-card:hover{transform:translateY(-4px);border-color:var(--primary);box-shadow:0 8px 30px rgba(var(--primary-rgb),0.15)}
+.level-card .level-icon{font-size:2rem;margin-bottom:var(--space-sm)}
+.level-card h4{font-size:0.95rem;margin-bottom:4px}
+.level-card p{font-size:0.78rem;color:var(--text-tertiary)}
+
+/* Footer */
+.hero-footer{padding:var(--space-3xl) 0;border-top:1px solid var(--surface-border);margin-top:var(--space-4xl)}
+.footer-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-md)}
+.footer-content p{font-size:0.85rem;color:var(--text-tertiary)}
+
+@media(max-width:768px){
+  .hero-content{grid-template-columns:1fr;text-align:center}
+  .hero-subtitle{margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .hero-visual{display:none}
+  .hero-stats{grid-template-columns:repeat(3,1fr);gap:var(--space-sm)}
+  .how-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+  .levels-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-content{justify-content:center;text-align:center}
+}

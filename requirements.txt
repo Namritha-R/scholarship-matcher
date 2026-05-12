@@ -1,0 +1,3 @@
+# This is a Node.js project. 
+# Dependencies are managed via package.json files (in root and functions directory).
+# Run 'npm install' to install dependencies.

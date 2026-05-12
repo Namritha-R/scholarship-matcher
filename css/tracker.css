@@ -1,0 +1,32 @@
+/* ═══ Saved Scholarships Tracker ═══ */
+.tracker-section{min-height:100vh;padding:calc(80px + var(--space-2xl)) 0 var(--space-3xl)}
+.tracker-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-md);margin-bottom:var(--space-xl)}
+.tracker-header h2{display:flex;align-items:center;gap:var(--space-sm)}
+.tracker-count{font-size:0.85rem;color:var(--text-tertiary);font-weight:400}
+.tracker-actions{display:flex;gap:var(--space-sm)}
+
+/* Saved Cards */
+.tracker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:var(--space-lg)}
+.tracker-card{background:var(--surface);border:1px solid var(--surface-border);border-radius:var(--radius-lg);padding:var(--space-lg);transition:all var(--duration-fast)}
+.tracker-card:hover{box-shadow:var(--shadow-md)}
+.tracker-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-md)}
+.tracker-card-header h3{font-size:1rem;flex:1}
+.btn-remove{width:32px;height:32px;border-radius:50%;border:1px solid var(--surface-border);background:transparent;color:var(--text-tertiary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--duration-fast)}
+.btn-remove:hover{color:var(--danger);border-color:var(--danger);background:var(--danger-bg)}
+.tracker-card-meta{display:flex;flex-wrap:wrap;gap:var(--space-sm);margin-bottom:var(--space-md)}
+.tracker-card-meta span{font-size:0.8rem;color:var(--text-secondary);display:flex;align-items:center;gap:4px}
+.deadline-badge{padding:4px 10px;border-radius:var(--radius-full);font-size:0.78rem;font-weight:600}
+.deadline-badge.urgent{background:var(--danger-bg);color:var(--danger)}
+.deadline-badge.soon{background:var(--warning-bg);color:var(--warning)}
+.deadline-badge.plenty{background:var(--success-bg);color:var(--success)}
+.tracker-card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:var(--space-md);border-top:1px solid var(--surface-border)}
+
+/* Empty State */
+.tracker-empty{text-align:center;padding:var(--space-4xl) var(--space-xl)}
+.tracker-empty-icon{font-size:4rem;margin-bottom:var(--space-lg);opacity:0.4}
+.tracker-empty h3{margin-bottom:var(--space-sm)}
+.tracker-empty p{max-width:400px;margin:0 auto var(--space-xl);font-size:0.9rem;color:var(--text-tertiary)}
+
+@media(max-width:768px){
+  .tracker-grid{grid-template-columns:1fr}
+}

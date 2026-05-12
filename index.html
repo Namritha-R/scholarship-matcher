@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScholarPath — Find Your Perfect Scholarship Worldwide</title>
+  <meta name="description" content="Discover scholarships for school, college, university, masters and PhD programs worldwide. Smart matching finds the best opportunities for your profile." />
+  <meta name="keywords" content="scholarships, education funding, study abroad, financial aid, grants, university scholarships, school scholarships" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/index.css" />
+  <link rel="stylesheet" href="/css/hero.css" />
+  <link rel="stylesheet" href="/css/form.css" />
+  <link rel="stylesheet" href="/css/results.css" />
+  <link rel="stylesheet" href="/css/tracker.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="url(#logoGrad)" stroke-width="2.5"/>
+          <path d="M16 6L19 14H25L20 19L22 27L16 22L10 27L12 19L7 14H13L16 6Z" fill="url(#logoGrad)"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="4" y1="4" x2="28" y2="28">
+              <stop stop-color="var(--primary)"/>
+              <stop offset="1" stop-color="var(--secondary)"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>ScholarPath</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#" class="nav-link active" data-page="hero">Home</a>
+        <a href="#" class="nav-link" data-page="form">Find Scholarships</a>
+        <a href="#" class="nav-link" data-page="results">Results</a>
+        <a href="#" class="nav-link" data-page="tracker">Saved</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main id="app-main">
+    <!-- Hero Section -->
+    <section class="page page-hero active" id="page-hero"></section>
+
+    <!-- Form Section -->
+    <section class="page page-form" id="page-form"></section>
+
+    <!-- Results Section -->
+    <section class="page page-results" id="page-results"></section>
+
+    <!-- Tracker Section -->
+    <section class="page page-tracker" id="page-tracker"></section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="scholarship-modal"></div>
+  </div>
+
+  <!-- Toast container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
