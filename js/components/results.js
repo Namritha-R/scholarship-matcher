@@ -119,6 +119,7 @@ export function renderResults(container, navigateTo, data = {}) {
 
     function applyFilters() {
       filtered = results.filter(s => {
+        if (s.status === 'deactivated') return false;
         if (activeFilters.level.length && !activeFilters.level.some(l => s.level.includes(l))) return false;
         if (activeFilters.region.length && !activeFilters.region.includes(s.region)) return false;
         if (activeFilters.minAmount > 0 && s.amountNum < activeFilters.minAmount) return false;
@@ -201,8 +202,10 @@ export function renderResults(container, navigateTo, data = {}) {
 function renderCard(s) {
   const matchClass = s.matchScore >= 80 ? 'high' : s.matchScore >= 50 ? 'medium' : 'low';
   const saved = isSaved(s.id);
+  const deadlineText = s.status === 'closed' ? `Closed (Opens: ${s.openingDate || 'TBA'})` : s.deadline;
+  
   return `
-    <div class="scholarship-card" data-id="${s.id}">
+    <div class="scholarship-card ${s.status === 'closed' ? 'closed' : ''}" data-id="${s.id}">
       <div class="card-header">
         <h3>${s.name}</h3>
         <div class="match-badge ${matchClass}">${s.matchScore}%<small>match</small></div>
@@ -211,7 +214,7 @@ function renderCard(s) {
       <div class="card-details">
         <span class="card-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${s.country}</span>
         <span class="card-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>${s.level.join(', ')}</span>
-        <span class="card-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>${s.deadline}</span>
+        <span class="card-detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>${deadlineText}</span>
       </div>
       <div class="card-tags">${s.tags.map(t => `<span class="card-tag">${t}</span>`).join('')}</div>
       <div class="card-footer">
@@ -242,7 +245,7 @@ function showModal(s, profile) {
       <div class="modal-stats">
         <div class="modal-stat"><div class="stat-val" style="color:var(--success)">${s.amount}</div><div class="stat-lbl">Funding</div></div>
         <div class="modal-stat"><div class="stat-val">${s.country}</div><div class="stat-lbl">Country</div></div>
-        <div class="modal-stat"><div class="stat-val">${s.deadline}</div><div class="stat-lbl">Deadline</div></div>
+        <div class="modal-stat"><div class="stat-val">${s.status === 'closed' ? `Closed (Opens: ${s.openingDate || 'TBA'})` : s.deadline}</div><div class="stat-lbl">Deadline</div></div>
       </div>
       <div class="modal-desc"><h4>About This Scholarship</h4><p>${s.description}</p></div>
       <h4 style="margin-bottom:8px">Eligibility</h4>

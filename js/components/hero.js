@@ -53,7 +53,7 @@ export function renderHero(container, navigateTo) {
 
     <div class="how-section container" id="how-section">
       <div class="section-header">
-        <h2>How <span class="gradient-text">ScholarPath</span> Works</h2>
+        <h2>How <span class="gradient-text">SkolarX</span> Works</h2>
         <p>Three simple steps to find scholarships perfectly matched to your profile</p>
       </div>
       <div class="how-grid">
@@ -80,7 +80,7 @@ export function renderHero(container, navigateTo) {
 
     <footer class="hero-footer container">
       <div class="footer-content">
-        <p>© ${new Date().getFullYear()} ScholarPath — Built to empower learners worldwide</p>
+        <p>© ${new Date().getFullYear()} SkolarX — Built to empower learners worldwide</p>
         <p>Data is curated + live web search powered</p>
       </div>
     </footer>

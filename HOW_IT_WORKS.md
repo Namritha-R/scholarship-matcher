@@ -1,4 +1,4 @@
-# ScholarPath — How the Search & Matching Process Works
+# SkolarX — How the Search & Matching Process Works
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -16,7 +16,7 @@
 
 ## 1. Overview
 
-ScholarPath uses a **hybrid data + live search** approach with automated updates:
+SkolarX uses a **hybrid data + live search** approach with automated updates:
 
 - **Firebase Firestore Database**: A cloud database storing structured scholarship records. It initially contains a seed list of 45+ real-world scholarships with rich metadata.
 - **Auto-Updater (Cloud Functions)**: A serverless backend function that runs periodically to fetch fresh data from the internet (using free scraping/feeds) and updates Firestore.
@@ -277,7 +277,9 @@ These are rendered as clickable buttons that open Google Search in a new tab.
   - Yellow (50-79%) = Medium match
   - Red (<50%) = Low match
 - **Scholarship Name** and **Organization**
-- **Quick Details**: Country, Level, Deadline (with icons)
+- **Quick Details**: Country, Level, Deadline/Status
+  - If the scholarship is closed but will reopen, it displays: `Closed (Opens: [Approx. Date])`.
+  - Deactivated scholarships are automatically hidden from view.
 - **Tags**: "Prestigious", "Full Funding", "Research", etc.
 - **Funding Amount**: Displayed in green
 - **Save Button (♡)**: Toggle to save/unsave
@@ -367,4 +369,4 @@ User fills Profile Form (country-aware)
 
 ---
 
-*Last Updated: May 2026 | ScholarPath v1.0*
+*Last Updated: May 2026 | SkolarX v1.0*

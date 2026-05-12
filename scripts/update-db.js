@@ -54,7 +54,8 @@ async function run() {
       description: "For outstanding minority students to pursue undergraduate education.",
       eligibility: { nationality: "US Citizen/Resident", gpa: 3.3, financialNeed: true, merit: true, gender: "Any", minority: true },
       link: "https://www.gmsp.org/",
-      tags: ["Minority", "Full Funding"]
+      tags: ["Minority", "Full Funding"],
+      status: "open"
     },
     {
       id: "fresh-2",
@@ -70,7 +71,8 @@ async function run() {
       description: "For professionals dedicated to peace and conflict resolution.",
       eligibility: { nationality: "Any", gpa: 3.0, financialNeed: false, merit: true, gender: "Any", minority: false },
       link: "https://www.rotary.org/",
-      tags: ["Peace", "Leadership"]
+      tags: ["Peace", "Leadership"],
+      status: "open"
     },
     {
       id: "fresh-3",
@@ -86,13 +88,49 @@ async function run() {
       description: "Full scholarship for international students to study in Japan.",
       eligibility: { nationality: "Non-Japanese", gpa: 3.2, financialNeed: false, merit: true, gender: "Any", minority: false },
       link: "https://www.mext.go.jp/",
-      tags: ["Full Funding", "Government"]
+      tags: ["Full Funding", "Government"],
+      status: "open"
+    },
+    {
+      id: "fresh-4",
+      name: "Fulbright Foreign Student Program 2026",
+      org: "U.S. Department of State",
+      level: ["Masters", "PhD"],
+      field: ["Any"],
+      country: "USA",
+      region: "USA",
+      amount: "Full Funding",
+      amountNum: 70000,
+      deadline: "Oct",
+      description: "Full funding for international students to pursue graduate study in the US.",
+      eligibility: { nationality: "Non-US", gpa: 3.5, financialNeed: false, merit: true, gender: "Any", minority: false },
+      link: "https://foreign.fulbrightonline.org/",
+      tags: ["Full Funding", "Prestigious"],
+      status: "closed",
+      openingDate: "Feb 2026"
+    },
+    {
+      id: "fresh-5",
+      name: "Old Scholarship (Expired)",
+      org: "Old Org",
+      level: ["Undergraduate"],
+      field: ["Any"],
+      country: "Global",
+      region: "Global",
+      amount: "$1,000",
+      amountNum: 1000,
+      deadline: "Expired",
+      description: "This scholarship is no longer active.",
+      eligibility: { nationality: "Any", gpa: 2.0, financialNeed: false, merit: false, gender: "Any", minority: false },
+      link: "https://example.com",
+      tags: ["Expired"],
+      status: "deactivated"
     }
   ];
 
   for (const s of scholarships) {
     await setDoc(doc(db, 'scholarships', s.id), s);
-    console.log(`✅ Added: ${s.name}`);
+    console.log(`✅ Added/Updated: ${s.name} (${s.status})`);
   }
   
   console.log("🎉 Database update complete!");

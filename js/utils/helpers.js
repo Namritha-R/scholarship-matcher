@@ -33,6 +33,6 @@ export function exportToCSV(scholarships) {
   const blob = new Blob([csv], { type: 'text/csv' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
-  a.href = url; a.download = 'scholarpath_saved.csv'; a.click();
+  a.href = url; a.download = 'skolarx_saved.csv'; a.click();
   URL.revokeObjectURL(url);
 }

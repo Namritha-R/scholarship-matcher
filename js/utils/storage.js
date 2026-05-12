@@ -1,8 +1,8 @@
 // ═══ LocalStorage Utilities ═══
 
-const SAVED_KEY = 'scholarpath_saved';
-const PROFILE_KEY = 'scholarpath_profile';
-const THEME_KEY = 'scholarpath_theme';
+const SAVED_KEY = 'skolarx_saved';
+const PROFILE_KEY = 'skolarx_profile';
+const THEME_KEY = 'skolarx_theme';
 
 export function getSaved() {
   try { return JSON.parse(localStorage.getItem(SAVED_KEY)) || []; }

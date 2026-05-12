@@ -1,6 +1,6 @@
-# 🎓 ScholarPath — Global Scholarship Matcher
+# 🎓 SkolarX — Global Scholarship Matcher
 
-ScholarPath is a high-performance, client-side platform designed to match users to scholarships worldwide based on their unique academic and personal profile.
+SkolarX is a high-performance, client-side platform designed to match users to scholarships worldwide based on their unique academic and personal profile.
 
 It features a country-aware form wizard that adapts to different grading systems (like GPA in the USA, Percentages in India, or Abitur in Germany) and computes a match score for each scholarship.
 

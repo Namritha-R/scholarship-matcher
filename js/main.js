@@ -1,4 +1,4 @@
-// ═══ ScholarPath — Main Entry Point ═══
+// ═══ SkolarX — Main Entry Point ═══
 import { renderHero } from './components/hero.js';
 import { renderForm } from './components/form.js';
 import { renderResults } from './components/results.js';
